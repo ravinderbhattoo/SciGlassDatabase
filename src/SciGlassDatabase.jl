@@ -119,6 +119,7 @@ function load_essentials()
     load_table!(SELECT, "Gcomp")
     load_table!(SELECT, "Kod2Ref")
     load_table!(SELECT, "Reference")
+    return true
 end
 
 end

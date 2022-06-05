@@ -2,5 +2,5 @@ using SciGlassDatabase
 using Test
 
 @testset "SciGlassDatabase.jl" begin
-    # Write your tests here.
+    @test load_essentials()
 end
