@@ -1,0 +1,271 @@
+["ATOMS.TXT"]
+git-tree-sha1 = "e0015f5e249ee525d8bfce6d95ed0c4227637523"
+lazy = true
+
+    [["ATOMS.TXT".download]]
+    sha256 = "c1ed66dcdfb35101824413b7611aca1a8b1d3ba4122883de099392aa07a6ec55"
+    url = "https://gist.github.com/ravinderbhattoo/0bd3ad2dde5a91165d8112394c599a4d/raw/e0015f5e249ee525d8bfce6d95ed0c4227637523.tar.gz"
+
+["AtMol.TXT"]
+git-tree-sha1 = "c58c45666729033a3d30c41250866a4db94a3fdc"
+lazy = true
+
+    [["AtMol.TXT".download]]
+    sha256 = "7691e61f7a93121323430eebe1173845ee6323f06bd00e68557674fa67e10fd2"
+    url = "https://gist.github.com/ravinderbhattoo/7fae3bbabaaf422e1247d873b545e8bb/raw/c58c45666729033a3d30c41250866a4db94a3fdc.tar.gz"
+
+["AtWt.TXT"]
+git-tree-sha1 = "526f18e448609924c2b7aa393701a9b3397855e2"
+lazy = true
+
+    [["AtWt.TXT".download]]
+    sha256 = "a01b5087240ff86826b057c8e13501e6780386327fa32853a7ef171e57a61105"
+    url = "https://gist.github.com/ravinderbhattoo/370e30687585a64a3eafe338051f27d9/raw/526f18e448609924c2b7aa393701a9b3397855e2.tar.gz"
+
+["Authors.TXT"]
+git-tree-sha1 = "594a5c84be8fd0e5be1c1baa79ccf375272122e0"
+lazy = true
+
+    [["Authors.TXT".download]]
+    sha256 = "e76adde2d1a0c22751cbe67f02155d3091c9fd98c6833fa2c298e3d326fa62fb"
+    url = "https://gist.github.com/ravinderbhattoo/adb228d215372ca9926bd7d8ed1db6d4/raw/594a5c84be8fd0e5be1c1baa79ccf375272122e0.tar.gz"
+
+["CalcAtoms.TXT"]
+git-tree-sha1 = "d2bdc35688ae7eaaa062059139384add358d131b"
+lazy = true
+
+    [["CalcAtoms.TXT".download]]
+    sha256 = "9c22fbece6c8ec58015877ebc877dbe8eef41ae5f2af29e0c30b92d1cc7ad835"
+    url = "https://gist.github.com/ravinderbhattoo/5b0fc33741851814a62e0105b878902f/raw/d2bdc35688ae7eaaa062059139384add358d131b.tar.gz"
+
+["CalcComp.TXT"]
+git-tree-sha1 = "7e8837feb6901d526b12ab2f823156feff66ab92"
+lazy = true
+
+    [["CalcComp.TXT".download]]
+    sha256 = "cc6905116033cba8136984db7da73420a9bb164e60d05636fbd9dd75b8b6e1ea"
+    url = "https://gist.github.com/ravinderbhattoo/c88d9582c4d9885b67a3f66ed2b81cb0/raw/7e8837feb6901d526b12ab2f823156feff66ab92.tar.gz"
+
+["CalcListProp.TXT"]
+git-tree-sha1 = "00fbb39d00677fc9cf669b8709ee413e9cde7b4f"
+lazy = true
+
+    [["CalcListProp.TXT".download]]
+    sha256 = "668d30b52655c7d17cac5cca23a8d23f7c5e32d4163dec4ddbc4bb42a21b03f8"
+    url = "https://gist.github.com/ravinderbhattoo/bae202d3e358d42c633159fa1a18f772/raw/00fbb39d00677fc9cf669b8709ee413e9cde7b4f.tar.gz"
+
+["Contries.TXT"]
+git-tree-sha1 = "80f5a667516f72315ef0cf167e255cf9eb3d7e0d"
+lazy = true
+
+    [["Contries.TXT".download]]
+    sha256 = "622db8bb106499f1e661d41e0481913dc1b12122d4b3b7bfc84352f4ecb10b00"
+    url = "https://gist.github.com/ravinderbhattoo/2c7b079bd579e31d59d1e805b30f7bdb/raw/80f5a667516f72315ef0cf167e255cf9eb3d7e0d.tar.gz"
+
+["DT.TXT"]
+git-tree-sha1 = "e3bced2a13d6409e45425213a05da32c4a7cadf7"
+lazy = true
+
+    [["DT.TXT".download]]
+    sha256 = "f8f67f8a493ed7c4dc562f7521ef514ac23fe0d583a8e5ae47cfde6b0fdf26ee"
+    url = "https://gist.github.com/ravinderbhattoo/7cb8d7527d10dc37ed8a977f83de85f8/raw/e3bced2a13d6409e45425213a05da32c4a7cadf7.tar.gz"
+
+["DT2.TXT"]
+git-tree-sha1 = "e02c4b72b9b597e38974bbd6624ffc223e6e5889"
+lazy = true
+
+    [["DT2.TXT".download]]
+    sha256 = "85b0ed9857bb4b4fdfcc0417ab312b99f79d5ca84b492ef958d6b1b99d2811eb"
+    url = "https://gist.github.com/ravinderbhattoo/4996fb8108778641d07cfe29b2a9e93b/raw/e02c4b72b9b597e38974bbd6624ffc223e6e5889.tar.gz"
+
+["GF.TXT"]
+git-tree-sha1 = "a7ae967e14fa4f2a6bcc0aef6b96c0ffcc17fba8"
+lazy = true
+
+    [["GF.TXT".download]]
+    sha256 = "f97f562c9602d442795709b66bf1cddb10f22c53adf03dbdeaa672d7e20233b9"
+    url = "https://gist.github.com/ravinderbhattoo/270d45c652a14e3057e98c6a48644248/raw/a7ae967e14fa4f2a6bcc0aef6b96c0ffcc17fba8.tar.gz"
+
+["GF_add.TXT"]
+git-tree-sha1 = "4bb5b3b1324e5f4cbb9777c4bc8e088eceae602e"
+lazy = true
+
+    [["GF_add.TXT".download]]
+    sha256 = "c2fd56a0e1caf4ef2b60e269b5ed4c1880f1729662b048f9c5e09f0223333837"
+    url = "https://gist.github.com/ravinderbhattoo/cf0779d9d7684aeaf20bee691dfb476e/raw/4bb5b3b1324e5f4cbb9777c4bc8e088eceae602e.tar.gz"
+
+["Gcomp.TXT"]
+git-tree-sha1 = "ae777e2d6aa8d2be76b0ed507d3bda4ad7fb71ac"
+lazy = true
+
+    [["Gcomp.TXT".download]]
+    sha256 = "1a3736676837dfb87139848fc3cd5b2d5f444dd8e95585c699434bf05ca973c2"
+    url = "https://gist.github.com/ravinderbhattoo/2c9f14eb078543f1586ee942924b2856/raw/ae777e2d6aa8d2be76b0ed507d3bda4ad7fb71ac.tar.gz"
+
+["IDF.TXT"]
+git-tree-sha1 = "d5ce1e90467c29507f785a0a7b5cdcd3b36f2dac"
+lazy = true
+
+    [["IDF.TXT".download]]
+    sha256 = "09cfffac2e0c0edb5fc77f28765d163a40aac425a42f4f91e4155958f7b5c277"
+    url = "https://gist.github.com/ravinderbhattoo/5e08fd755006d4f634371d191d58bfc7/raw/d5ce1e90467c29507f785a0a7b5cdcd3b36f2dac.tar.gz"
+
+["Journal.TXT"]
+git-tree-sha1 = "ff42d589736dc62c7fbbaa832f1dcbcd37757171"
+lazy = true
+
+    [["Journal.TXT".download]]
+    sha256 = "ce0e8104085815b9f6ee8c4727d6b7b926c3d1a8764a300b5cbe33f299f2ef2e"
+    url = "https://gist.github.com/ravinderbhattoo/ddadfaf3749903cb8839e2ad426ede49/raw/ff42d589736dc62c7fbbaa832f1dcbcd37757171.tar.gz"
+
+["Kod2Ref.TXT"]
+git-tree-sha1 = "254e65c993ee6fd5098d8b7dd62727defce6e22e"
+lazy = true
+
+    [["Kod2Ref.TXT".download]]
+    sha256 = "8630b7c0087c4ecc21d71184318b15cc6e676ea6e95efac27eb9d14d6f0ff290"
+    url = "https://gist.github.com/ravinderbhattoo/78ff7d97f81f08de715305a276fc5a75/raw/254e65c993ee6fd5098d8b7dd62727defce6e22e.tar.gz"
+
+["LISTPROP.TXT"]
+git-tree-sha1 = "1a79729175ff0fb50061a0a4827b2b7e243e4c8c"
+lazy = true
+
+    [["LISTPROP.TXT".download]]
+    sha256 = "39b096a1d3092759099ed111fe4e5d9e852cf7023ccd8cff73ec8257bd75df5b"
+    url = "https://gist.github.com/ravinderbhattoo/e5961d58d711f7d3aa2e713372a3b994/raw/1a79729175ff0fb50061a0a4827b2b7e243e4c8c.tar.gz"
+
+["Legends.TXT"]
+git-tree-sha1 = "be0f3bb607b5f20a749c40e8942c98f77a56c3a7"
+lazy = true
+
+    [["Legends.TXT".download]]
+    sha256 = "ebb75bed65bc7dc13df6cfe230243fb9de46ed82ef4c49a647314cbf8d769594"
+    url = "https://gist.github.com/ravinderbhattoo/794b36e4d0df54742aae6ec7356d9d99/raw/be0f3bb607b5f20a749c40e8942c98f77a56c3a7.tar.gz"
+
+["MaxGno.TXT"]
+git-tree-sha1 = "0b10e490f7f6664d9842a5f988e049a7fc2ae208"
+lazy = true
+
+    [["MaxGno.TXT".download]]
+    sha256 = "3011093b9eb4676e1fe02a77112d8a827bcfab053286c2c9e23a1d471942b2c3"
+    url = "https://gist.github.com/ravinderbhattoo/f325f3dc869076a3de32618165ab3ff8/raw/0b10e490f7f6664d9842a5f988e049a7fc2ae208.tar.gz"
+
+["MolPc.TXT"]
+git-tree-sha1 = "61ab871c1e05ba6acf5d57eba400642d2d9b157d"
+lazy = true
+
+    [["MolPc.TXT".download]]
+    sha256 = "52e74417ffadd273f134ba057d63818384325541a6133dbb99028d875b1dee74"
+    url = "https://gist.github.com/ravinderbhattoo/9d37ea4010803b40c848b929f3c9e86f/raw/61ab871c1e05ba6acf5d57eba400642d2d9b157d.tar.gz"
+
+["PConvert.TXT"]
+git-tree-sha1 = "c68ed3d2a285a08f3f04c93a2abbf352d929715e"
+lazy = true
+
+    [["PConvert.TXT".download]]
+    sha256 = "5d7fce3a9516b7dfd9d02a88fa906d8a2a1644dabf72154841fb32f0264b4f64"
+    url = "https://gist.github.com/ravinderbhattoo/0af7ff126e42659aa4051101b88d82c0/raw/c68ed3d2a285a08f3f04c93a2abbf352d929715e.tar.gz"
+
+["Patents.TXT"]
+git-tree-sha1 = "f929772b5f09e1a0d900edb8107c1ed55a8b621d"
+lazy = true
+
+    [["Patents.TXT".download]]
+    sha256 = "5875ecb9c2347c808b70e235ba4444784ec12e7d450b8eb0894cfe2b75652d07"
+    url = "https://gist.github.com/ravinderbhattoo/52af3dcabab682e9d99e8871eee33ad6/raw/f929772b5f09e1a0d900edb8107c1ed55a8b621d.tar.gz"
+
+["PropList.TXT"]
+git-tree-sha1 = "ade9423b6d597354fbfe434d654854821ac96883"
+lazy = true
+
+    [["PropList.TXT".download]]
+    sha256 = "f484a891989b240ae3e2655a7e76884241c53457c0a1a327d49c0aef20fe685d"
+    url = "https://gist.github.com/ravinderbhattoo/e9571f8289c0e96af272428fa306e39f/raw/ade9423b6d597354fbfe434d654854821ac96883.tar.gz"
+
+["Reference.TXT"]
+git-tree-sha1 = "7073948d0657b2540f8bdd38dd3d5bebc77cf61b"
+lazy = true
+
+    [["Reference.TXT".download]]
+    sha256 = "fe7bac3576ab82649fb3d3aa63acf233da1f37ed9648ec2d586051662aa6bceb"
+    url = "https://gist.github.com/ravinderbhattoo/604d72a355cb2c9722a97692703f513c/raw/7073948d0657b2540f8bdd38dd3d5bebc77cf61b.tar.gz"
+
+["SYMBOL.TXT"]
+git-tree-sha1 = "28811209470c13439eb862d10aa6415876cebce8"
+lazy = true
+
+    [["SYMBOL.TXT".download]]
+    sha256 = "9a59c258a3c571c31a0c60d03a7bfea4aa6a77a94ae2c7ce94c9c2ba40e11058"
+    url = "https://gist.github.com/ravinderbhattoo/2120004cae28823ced52c3d9aceac9f1/raw/28811209470c13439eb862d10aa6415876cebce8.tar.gz"
+
+["SciGK.TXT"]
+git-tree-sha1 = "ec78a75114477cc18d4b9f8dd5d581afd1f539ee"
+lazy = true
+
+    [["SciGK.TXT".download]]
+    sha256 = "90be5e860fc379c4632e03a6933348d5349340f58d8673e41a454a9da1541576"
+    url = "https://gist.github.com/ravinderbhattoo/c9a7f6ba9a13dbc2bfc719f913545849/raw/ec78a75114477cc18d4b9f8dd5d581afd1f539ee.tar.gz"
+
+["Sort_Comp.TXT"]
+git-tree-sha1 = "5478cff50db512e726bc9123d1b3013fee3ce011"
+lazy = true
+
+    [["Sort_Comp.TXT".download]]
+    sha256 = "5ace9c3f9238a89ba376bf6c1f650bde3d4e8d1c446d4e6f41c3898b66a44638"
+    url = "https://gist.github.com/ravinderbhattoo/97e2da723f9ad34faa5564e47e305a8b/raw/5478cff50db512e726bc9123d1b3013fee3ce011.tar.gz"
+
+["Spectr.TXT"]
+git-tree-sha1 = "e062fb2dce06edc0dc58aec9161732d53b7b110e"
+lazy = true
+
+    [["Spectr.TXT".download]]
+    sha256 = "a138f94fc629839a494f14d420cb7c8343600e3536114bac402fe8225eb3b139"
+    url = "https://gist.github.com/ravinderbhattoo/d2738d744c90aa744dc4c01aef11cd05/raw/e062fb2dce06edc0dc58aec9161732d53b7b110e.tar.gz"
+
+["SpectralParam.TXT"]
+git-tree-sha1 = "820d7a99e167980ab3fad09c562fc7f5f11bd3be"
+lazy = true
+
+    [["SpectralParam.TXT".download]]
+    sha256 = "e99adb3bf1843e213d9fed42a83d30780b6d1cd829f4c72ad67a0d52b6127a1b"
+    url = "https://gist.github.com/ravinderbhattoo/98493cf8f768dde24ade2fcf079882db/raw/820d7a99e167980ab3fad09c562fc7f5f11bd3be.tar.gz"
+
+["SubjectIndex.TXT"]
+git-tree-sha1 = "fdf2c94427b721016c4b9013f02daca2ae423cac"
+lazy = true
+
+    [["SubjectIndex.TXT".download]]
+    sha256 = "e978dba17892b94d5867ea43d04985777c3eca31cfb0519d3ab39bd895abd42f"
+    url = "https://gist.github.com/ravinderbhattoo/1a3f05234bda828eac8d511e1ed3c1c7/raw/fdf2c94427b721016c4b9013f02daca2ae423cac.tar.gz"
+
+["Trademark.TXT"]
+git-tree-sha1 = "79b3b32d1ea637b9521460cba0f47745aa55d16d"
+lazy = true
+
+    [["Trademark.TXT".download]]
+    sha256 = "6a285770492d33f52d99a9c3aa5614b3cad78eec39459d3ffb0f9c9de4af5f4d"
+    url = "https://gist.github.com/ravinderbhattoo/459791d176849464e9cebec6921fe7fe/raw/79b3b32d1ea637b9521460cba0f47745aa55d16d.tar.gz"
+
+["UNITS.TXT"]
+git-tree-sha1 = "1ced8e9e2b0cd1d412d8094eac73240f05f830ac"
+lazy = true
+
+    [["UNITS.TXT".download]]
+    sha256 = "8b20fe530ea3ab1f375720e7fc6b5798114fca3718b0738b6aa9503dfbde6f82"
+    url = "https://gist.github.com/ravinderbhattoo/d892421a1254edd019eb3423df97d825/raw/1ced8e9e2b0cd1d412d8094eac73240f05f830ac.tar.gz"
+
+["WtPc.TXT"]
+git-tree-sha1 = "54dd92ce1c3b7c8b2e3e34dca6278f2ea4f636e8"
+lazy = true
+
+    [["WtPc.TXT".download]]
+    sha256 = "c7df65b55d549174e7a14ab0e74bd5c2112b611ea4beef35846e69d49a76abe5"
+    url = "https://gist.github.com/ravinderbhattoo/d3968ce0fd9ba870a551915208e91a5b/raw/54dd92ce1c3b7c8b2e3e34dca6278f2ea4f636e8.tar.gz"
+
+["tblpar.TXT"]
+git-tree-sha1 = "04eb68eadf7c8f3bcba1618c032ca413fb005167"
+lazy = true
+
+    [["tblpar.TXT".download]]
+    sha256 = "44f901f54db4ec2a875ced71695e71d88f5fc123ada93f7ab3582b204133611b"
+    url = "https://gist.github.com/ravinderbhattoo/04606fcb568dce14c36487122b5c9d3b/raw/04eb68eadf7c8f3bcba1618c032ca413fb005167.tar.gz"

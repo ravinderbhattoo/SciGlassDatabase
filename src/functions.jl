@@ -30,14 +30,10 @@ See also [`load_table!`](@ref), [`load_all_tables!`](@ref).
 reload_table!(SELECT, "AtMol")
 ```
 """
-function reload_table!(a, item)
-    if typeof(a) == Property
-        name = "Property"
-    else
-        name = "select"
-    end
-    filepath = "$path/$name/"*string(item)*".TXT"
-    set_table_field!(a, item, filepath)
+function reload_table!(tables, item)
+    filepath = String(item) * ".TXT"
+    filepath = joinpath(@artifact_str(filepath), filepath)
+    set_table_field!(tables, Symbol(item), filepath)
 end
 
 """
@@ -80,11 +76,13 @@ load_table!(SELECT, "AtMol")
 ```
 
 """
-function load_table!(table, field)
-    filepath = getfield(table, Symbol(field))
-    set_table_field!(table, Symbol(field), filepath)
+function load_table!(tables, item::Union{Symbol, String})
+    filepath = getfield(tables, Symbol(item))
+    if typeof(filepath) == String
+        filepath = joinpath(@artifact_str(filepath), filepath)
+    end
+    set_table_field!(tables, Symbol(item), filepath)
 end
-
 
 """
     load_all_tables!(tables)
@@ -99,9 +97,13 @@ load_all_tables!(SELECT)
 ```
 
 """
-function load_all_tables!(tables)
+function load_all_tables!(tables; force=false)
     for (item, filepath) in eachtable(tables)
-        set_table_field!(tables, item, filepath)
+        if force
+            reload_table!(tables, item)
+        else
+            load_table!(tables, item)
+        end
     end
 end
 

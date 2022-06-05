@@ -25,9 +25,9 @@ __Features__
 module SciGlassDatabase
 
 using DataFrames, Query, CSV
+using Pkg.Artifacts
 
-
-export PROPERTY, SELECT, describe
+export PROPERTY, SELECT, load_essentials
 
 """
     Property holds all the table in Property.mdb database file.
@@ -51,8 +51,8 @@ mutable struct Property
     UNITS
 end
 
-function Property(dir)
-    items = ["$dir/"*string(fn)*".TXT" for fn in fieldnames(Property)]
+function Property()
+    items = [string(fn)*".TXT" for fn in fieldnames(Property)]
     Property(items...)
 end
 
@@ -60,7 +60,6 @@ end
     Select holds all the table in Select.mdb database file.
 """
 mutable struct Select
-    ARHIV
     Authors
     GF_add
     MaxGno
@@ -81,8 +80,8 @@ mutable struct Select
     Trademark
 end
 
-function Select(dir)
-    items = ["$dir/"*string(fn)*".TXT" for fn in fieldnames(Select)]
+function Select()
+    items = [string(fn)*".TXT" for fn in fieldnames(Select)]
     Select(items...)
 end
 
@@ -107,21 +106,19 @@ function Base.show(io::IO, table::Union{Select, Property})
     end
 end
 
-
-path = dirname(dirname(pathof(SciGlassDatabase)))
-
-function Select()
-    Select("$path/select")
-end
-
-function Property()
-    Property("$path/Property")
-end
-
-PROPERTY = Property("$path/Property")
-SELECT = Select("$path/select")
+PROPERTY = Property()
+SELECT = Select()
 
 include("./functions.jl")
 include("./extract.jl")
+
+function load_essentials()
+    load_table!(PROPERTY, "LISTPROP")
+    load_table!(PROPERTY, "CalcComp")
+    load_table!(SELECT, "SciGK")
+    load_table!(SELECT, "Gcomp")
+    load_table!(SELECT, "Kod2Ref")
+    load_table!(SELECT, "Reference")
+end
 
 end
