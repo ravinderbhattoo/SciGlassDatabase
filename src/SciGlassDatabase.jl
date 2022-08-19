@@ -24,13 +24,33 @@ __Features__
 """
 module SciGlassDatabase
 
-using DataFrames, Query, CSV
+using DataFrames, Query, CSV, Plots, TernaryPlots
 using Pkg.Artifacts
 
 export PROPERTY, SELECT, load_essentials
 
 """
     Property holds all the table in Property.mdb database file.
+
+# List of tables:
+
+    ATOMS
+    CalcListProp
+    IDF
+    Legends
+    SYMBOL
+    tblpar
+    CalcAtoms
+    DT
+    Journal
+    PConvert
+    Sort_Comp
+    CalcComp
+    DT2
+    LISTPROP
+    PropList
+    UNITS
+
 """
 mutable struct Property
     ATOMS
@@ -58,6 +78,28 @@ end
 
 """
     Select holds all the table in Select.mdb database file.
+
+# List of tables:
+
+    Authors
+    GF_add
+    MaxGno
+    Reference
+    SpectralParam
+    WtPc
+    AtMol
+    Contries
+    Gcomp
+    MolPc
+    SciGK
+    SubjectIndex
+    AtWt
+    GF
+    Kod2Ref
+    Patents
+    Spectr
+    Trademark
+
 """
 mutable struct Select
     Authors
@@ -111,6 +153,7 @@ SELECT = Select()
 
 include("./functions.jl")
 include("./extract.jl")
+include("./plots.jl")
 
 function load_essentials()
     load_table!(PROPERTY, "LISTPROP")
