@@ -13,6 +13,7 @@ Query = "1a8c2f83-1ff3-5112-b086-8aa67b057ba1"
 TernaryPlots = "1f5e811d-5acb-4dfc-9a45-b3a27d369aae"
 
 [compat]
+PGFPlots = "3"
 Plots = "1"
 Query = "1"
 DataFrames = "1"
