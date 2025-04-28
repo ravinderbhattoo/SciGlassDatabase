@@ -1,6 +1,10 @@
 # SciGlassDatabase.jl
 
-A Julia package for extracting data from SciGlass database.
+A Julia package for extracting data from SciGlass dataset.
+
+### What is SciGlass dataset?
+
+SciGlass is the world's most extensive database dedicated to glass properties, housing information on nearly 400,000 unique compositions and thousands of experimental data points curated from scientific literature. This huge data resource is an invaluable asset for researchers and engineers in the field of glass science and technology. The raw dataset is hosted at [https://github.com/epam/SciGlass](https://github.com/epam/SciGlass).
 
 Verbatim from [https://github.com/epam/SciGlass](https://github.com/epam/SciGlass)
 

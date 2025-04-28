@@ -25,6 +25,7 @@ __Features__
 module SciGlassDatabase
 
 using DataFrames, Query, CSV, Plots, TernaryPlots
+using PlotlyJS, Dash
 using Pkg.Artifacts
 
 export PROPERTY, SELECT, load_essentials
@@ -128,7 +129,7 @@ function Select()
 end
 
 
-function Base.show(io::IO, table::Union{Select, Property}) 
+function Base.show(io::IO, table::Union{Select, Property})
     printstyled("$(typeof(table))\n", color=:blue, bold=true)
     fnames = fieldnames(typeof(table))
     for item in fnames[1:end-1]
@@ -151,9 +152,11 @@ end
 PROPERTY = Property()
 SELECT = Select()
 
+include("./cleandf.jl")
 include("./functions.jl")
 include("./extract.jl")
 include("./plots.jl")
+include("./tables.jl")
 
 function load_essentials()
     load_table!(PROPERTY, "LISTPROP")

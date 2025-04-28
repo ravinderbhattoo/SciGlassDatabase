@@ -2,16 +2,9 @@
 
 ```@contents
 Pages = [
-            "peridyn.md",
-            "mmodels.md",
-            "cmodels.md",
-            "solvers.md",
-            "bc.md",
-            "operatorandutil.md",
+            "install.md",
             "examples.md",
-            "mesh.md",
-            "index.md", 
-            "autodocs.md"
+            "index.md",
         ]
 Depth = 3
 ```
