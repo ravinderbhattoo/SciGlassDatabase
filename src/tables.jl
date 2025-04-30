@@ -33,32 +33,78 @@ function show_table(df; title="Table", with_plot=false)
     table_layout!(app, df; title=title, with_plot=with_plot)
 
     if with_plot
-        make_plot(x, y) = PlotlyJS.plot(
-            df, x=Symbol(x), y=Symbol(y),
-            mode="markers", marker_size=8,
-            Layout(
-                width=800, height=600,
-                margin=attr(l=20,r=20,t=20,b=20),
-                paper_bgcolor="white",
-                bgcolor="white",
-                )
-            )
 
+        # Callback to render scatter or ternary plot
         callback!(
             app,
-            Output("x-dd-output-container", "children"),
-            Output("y-dd-output-container", "children"),
             Output("graph", "children"),
+            Input("plot-type", "value"),
             Input("x-dd", "value"),
             Input("y-dd", "value"),
-            ) do input_1, input_2
+            Input("z-dd", "value"),
+            Input("color-property", "value")
+        ) do plot_type, x_col, y_col, z_col, color_col
+            if plot_type == "scatter"
+                fig = PlotlyJS.plot(
+                    df, x=Symbol(x_col), y=Symbol(y_col),
+                    mode="markers", marker_size=8,
+                    Layout(
+                        width=1000,  # Increase width
+                        height=800,  # Increase height
+                        margin=attr(l=50, r=50, t=50, b=50),  # Adjust margins for better spacing
+                        paper_bgcolor="white",
+                        bgcolor="white"
+                    )
+                )
+            elseif plot_type == "ternary"
+                fig = PlotlyJS.plot(
+                    PlotlyJS.scatterternary(
+                            a=df[!, Symbol(x_col)],
+                            b=df[!, Symbol(y_col)],
+                            c=df[!, Symbol(z_col)],
+                            mode="markers",
+                            marker=attr(
+                                size=8,
+                                color=df[!, Symbol(color_col)],  # Use the selected property for color
+                                colorscale="Viridis",  # Choose a colorscale
+                                showscale=true  # Display the color scale
+                            )
+                            # text=((a)->("x=$(a[1]),\ny=$(a[2]),\nz=$(a[3]),\np=$(a[4])")).(eachrow(df[!, [Symbol(x_col), Symbol(y_col), Symbol(z_col), Symbol(color_col)]])) ,  # Add hover text with property values
+                            # hoverinfo="text"  # Display only the hover text
+            ),
+                    Layout(
+                        ternary=attr(
+                            sum=1,
+                            aaxis=attr(title=x_col),
+                            baxis=attr(title=y_col),
+                            caxis=attr(title=z_col)
+                        ),
+                        width=1000,  # Increase width
+                        height=800,  # Increase height
+                        margin=attr(l=50, r=50, t=50, b=50),  # Adjust margins for better spacing
+                        paper_bgcolor="white",
+                        bgcolor="white"
+                    )
+                )
+            end
 
-            fig =  dcc_graph(figure = make_plot(input_1, input_2))
-
-            return "You have selected \"$input_1\"", "You have selected \"$input_2\"", fig
+            return dcc_graph(figure=fig)
         end
+
+        # Callback to enable or disable the z-axis dropdown based on plot type
+        callback!(
+            app,
+            Output("z-dd", "disabled"),
+            Output("color-property", "disabled"),
+            Input("plot-type", "value")
+        ) do plot_type
+            a = plot_type != "ternary"
+            return a, a  # Disable if plot type is not "ternary"
+        end
+
     end
 
+    # Callback for downloading CSV
     callback!(
         app,
         Output("download-dataframe-csv", "data"),
@@ -77,6 +123,43 @@ function show_table(df; title="Table", with_plot=false)
         end
         nothing
     end
+
+
+    # Callback to highlight selected columns
+    callback!(
+        app,
+        Output("data-table", "style_data_conditional"),
+        Input("x-dd", "value"),
+        Input("y-dd", "value"),
+        Input("z-dd", "value"),
+        Input("color-property", "value")
+    ) do x_col, y_col, z_col, color_col
+        return [
+            Dict(
+                "if" => Dict("column_id" => x_col),
+                "backgroundColor" => "rgb(255, 230, 230)",  # Highlight x-axis column
+                "fontWeight" => "bold"
+            ),
+            Dict(
+                "if" => Dict("column_id" => y_col),
+                "backgroundColor" => "rgb(230, 255, 230)",  # Highlight y-axis column
+                "fontWeight" => "bold"
+            ),
+            # Highlight the z-axis column
+            Dict(
+                "if" => Dict("column_id" => z_col),
+                "backgroundColor" => "rgb(230, 240, 255)",  # Light blue for z-axis
+                "fontWeight" => "bold"
+            ),
+            # Highlight the selected property column
+            Dict(
+                "if" => Dict("column_id" => color_col),
+                "backgroundColor" => "rgb(140, 130, 200)",  # Light red for the selected property
+                "fontWeight" => "bold"
+            )
+        ]
+    end
+
 
     run_server(app, "0.0.0.0", debug=true)
 end
@@ -103,25 +186,56 @@ function table_layout!(app, df; title="Table", with_plot=false)
     function graph_div()
         if with_plot
             html_div([
-                html_div(html_h3("Select x-axis")),
-                dcc_dropdown(
-                    id="x-dd",
-                    options = options,
-                    value = options[1],
-                    style=Dict("width" => "400px")
-                ),
-                html_div(id="x-dd-output-container"),
-                html_div(html_h3("Select y-axis")),
-                dcc_dropdown(
-                    id="y-dd",
-                    options = options,
-                    value = options[2],
-                    style=Dict("width" => "400px")
-                ),
-                html_div(id="y-dd-output-container"),
-                html_div(id="graph", style=Dict("width" => "800px",
-                "border" => "solid 1px gray", "margin" => "10px"))
-            ])
+                html_div([
+                    html_h3("Select x-axis", style=Dict("backgroundColor" => "rgb(255, 230, 230)")),
+                    dcc_dropdown(
+                        id="x-dd",
+                        options = options,
+                        value = options[1],
+                        style=Dict("width" => "200px", "marginBottom" => "10px")
+                    ),
+                    html_h3("Select y-axis", style=Dict("backgroundColor" => "rgb(230, 255, 230)")),
+                    dcc_dropdown(
+                        id="y-dd",
+                        options = options,
+                        value = options[2],
+                        style=Dict("width" => "200px", "marginBottom" => "10px")
+                    ),
+                    html_h3("Select z-axis for ternary plot", style=Dict("backgroundColor" => "rgb(230, 240, 255)")),
+                    dcc_dropdown(
+                        id="z-dd",
+                        options = options,
+                        value = options[3],
+                        style=Dict("width" => "200px", "marginBottom" => "10px")
+                    ),
+                    html_h3("Select property for ternary plot color", style=Dict("backgroundColor" => "rgb(140, 130, 200)")),
+                    dcc_dropdown(
+                        id="color-property",
+                        options=[Dict("label" => col, "value" => col) for col in names(df)],
+                        value=names(df)[1],  # Default to the first column
+                        style=Dict("width" => "200px", "marginBottom" => "10px")
+                    ),
+                    html_h3("Select Plot Type"),
+                    dcc_dropdown(
+                        id="plot-type",
+                        options = [
+                            Dict("label" => "Scatter Plot", "value" => "scatter"),
+                            Dict("label" => "Ternary Plot", "value" => "ternary")
+                        ],
+                        value = "scatter",
+                        style=Dict("width" => "200px", "marginBottom" => "10px")
+                    )
+                ], style=Dict("width" => "25%", "float" => "left", "padding" => "10px")),
+                html_div([
+                    html_div(id="graph", style=Dict(
+                        "width" => "1000px",  # Match the plot width
+                        "height" => "800px",  # Match the plot height
+                        "border" => "solid 1px gray",
+                        "overflow" => "auto",  # Allow scrolling if necessary
+                        "margin" => "10px"
+                    ))
+                ], style=Dict("width" => "70%", "float" => "right", "padding" => "10px"))
+            ], style=Dict("display" => "flex"))
         else
             html_div()
         end
@@ -137,6 +251,7 @@ function table_layout!(app, df; title="Table", with_plot=false)
             html_div("Note: The download will only work in a browser, not in Jupyter Notebook.")
         ]),
         dash_datatable(
+            id="data-table",
             data = map(eachrow(df)) do r
             Dict(names(r) .=> values(r))
             end,
@@ -147,12 +262,7 @@ function table_layout!(app, df; title="Table", with_plot=false)
                     "textAlign" =>  "left"
                 ) for c in ["Date", "Region"]
             ],
-            style_data_conditional=[
-                Dict(
-                    "if" =>  Dict("row_index" =>  "odd"),
-                    "backgroundColor" =>  "rgb(248, 248, 248)"
-                )
-            ],
+            style_data_conditional=[],
             style_header=Dict(
                 "backgroundColor" =>  "rgb(230, 230, 230)",
                 "fontWeight" =>  "bold"
